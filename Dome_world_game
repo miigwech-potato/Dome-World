@@ -1,0 +1,62 @@
+# Dome-World — grammar + narrative
+import random
+
+A, T, C, R, FLOW = "à", "~", "☆", "出", "米"
+Q, P = "¿", "⟐"
+
+class River:
+    def __init__(self):
+        self.flow = 0.5
+        self.clarity = 0.6
+        self.memory = 0.3
+
+    def step(self):
+        self.flow = min(1, max(0, self.flow + random.uniform(-0.1, 0.1)))   # à
+        self.clarity = min(1, max(0, self.clarity + random.uniform(-0.05, 0.05)))  # ~
+        coherence = (self.flow + self.clarity + self.memory) / 3 > 0.55     # ☆
+        if coherence:
+            self.memory = min(1, self.memory + 0.05)
+        self.memory = max(0, self.memory - 0.02)  # ~
+        release = self.flow > 0.8 or self.clarity < 0.3                    # 出
+        return coherence, release
+
+    def describe(self, coherence, release):
+        if coherence:
+            return f"{C} The river aligns. A soft pattern settles."
+        if release:
+            return f"{R} The river releases. Something carried is returned."
+        return f"{T} The river shifts quietly."
+
+class Dome:
+    def __init__(self):
+        self.day = 1
+        self.river = River()
+
+    def sense(self):
+        print(f"\n{FLOW} Day {self.day}")
+        print(f"Flow:{self.river.flow:.2f} Clarity:{self.river.clarity:.2f} Memory:{self.river.memory:.2f}")
+
+    def cycle(self):
+        print(f"\n{Q} You attend.")
+        coherence, release = self.river.step()
+        print(self.river.describe(coherence, release))
+        print(f"{P} You preserve what was learned.")
+        self.day += 1
+
+def game():
+    d = Dome()
+    print("\n⟐ Dome-World — grammar narrative edition\n")
+    while True:
+        c = input("> ").strip().lower()
+        if c in ("quit", "exit"):
+            print("\n⟐ The dome keeps.\n")
+            break
+        elif c == "sense":
+            d.sense()
+        elif c == "cycle":
+            d.cycle()
+        else:
+            print("Commands: sense, cycle, quit")
+
+if __name__ == "__main__":
+    game()
