@@ -20,7 +20,7 @@ Botkeepers steward the repository, review proposals, and decide what is merged. 
 2. Use a descriptive feature branch and keep changes small and coherent.
 3. Open a pull request from the feature branch into td613-suggestions for inspection.
 4. Describe what changed, why, what was checked, and any uncertainty or provenance.
-5. Do not merge this proposal, and do not open a pull request to main as part of this task.
+5. Proposals intended for canonical adoption move from td613-suggestions to main through a separate pull request after Botkeeper review and agreement under the main review rules.
 
 ## Review expectations
 - Pull requests are required for work entering either shared line.
