@@ -8,6 +8,7 @@ The inspected root contains project appendices, a strategic-planning briefing, a
 - Preserve spelling, capitalization, diacritics, symbols, and terminology in project material.
 - Do not silently rewrite unrelated content or claim an implementation exists when it does not.
 - Document provenance and uncertainty in the pull request.
+- Refer to contributors only by GitHub username in repository documentation, pull requests and commit messages.
 
 ## Do Not Normalize
 Never silently rename project vocabulary:
@@ -37,7 +38,7 @@ Keep documentation readable and retain glyphs and diacritics. Do not make archit
 Inspect the existing setup before proposing tests or commands. Run relevant existing checks when a code change warrants them, and report exact commands and results. This proposal is documentation and empty scaffolding only; no test suite or automated test command was identified during inspection, and no tests are being run for this documentation-only change.
 
 ## Branch and review workflow
-Never work directly on main. Use feature branches from td613-suggestions for proposals and open pull requests into td613-suggestions. Do not merge a proposal or target main for this task. A branch, commit, and pull request are not approval. See COLLABORATION.md for Botkeeper roles and review expectations. Do not change repository settings, access, or branch protection.
+Never work directly on main. Use feature branches from td613-suggestions for proposals and open pull requests into td613-suggestions. Agents do not merge proposals. Work intended for canonical main requires a separate pull request after Botkeeper review and agreement under COLLABORATION.md. A branch, commit, and pull request are not approval. See COLLABORATION.md for Botkeeper roles and review expectations. Do not change repository settings, access, or branch protection.
 
 ## Reporting
 Report observed state, paths changed, branch and pull request, checks performed and results, assumptions, and owner actions still required. Do not claim that settings or governance are active unless verified.
