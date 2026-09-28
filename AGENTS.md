@@ -8,6 +8,7 @@ The inspected root contains project appendices, a strategic-planning briefing, a
 - Preserve spelling, capitalization, diacritics, symbols, and terminology in project material.
 - Do not silently rewrite unrelated content or claim an implementation exists when it does not.
 - Document provenance and uncertainty in the pull request.
+- Refer to contributors only by GitHub username in repository documentation, pull requests and commit messages.
 
 ## Do Not Normalize
 Never silently rename project vocabulary:
